@@ -26,7 +26,9 @@ const PreloaderContainer = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.5s ease-out;
+  opacity: ${props => props.isLoading ? 1 : 0};
+  visibility: ${props => props.isLoading ? 'visible' : 'hidden'};
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
 `;
 
 const LogoContainer = styled.div`
@@ -90,16 +92,16 @@ const Preloader = ({ isLoading = true }) => {
   useEffect(() => {
     if (isLoading) {
       document.body.style.overflow = 'hidden';
+    } else {
+      const timer = setTimeout(() => {
+        document.body.style.overflow = 'unset';
+      }, 800); // Match this with the transition duration
+      return () => clearTimeout(timer);
     }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [isLoading]);
 
-  if (!isLoading) return null;
-
   return (
-    <PreloaderContainer>
+    <PreloaderContainer isLoading={isLoading}>
       <div style={{ position: 'relative' }}>
         <LogoContainer>
           <LogoShape />
