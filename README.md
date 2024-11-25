@@ -1,71 +1,220 @@
-# Getting Started with Create React App
+# The Uaso Ngiro Baboon Project Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This website showcases the groundbreaking work of the Uaso Ngiro Baboon Project (UNBP), a long-term primate research initiative based in Kenya. The project, led by Dr. Shirley C. Strum since 1972, combines scientific research with community-based conservation approaches.
 
-## Available Scripts
+## Project Structure
+```
+conservation-website/
+├── public/
+│   └── images/
+│       ├── people/         # Researchers, staff, and community members
+│       ├── wildlife/       # Animal photographs
+│       ├── landscapes/     # Location and environment shots
+│       ├── community/      # Community activities and events
+│       ├── historical/     # Archive photos
+│       └── artwork/        # Illustrations and artistic content
+├── src/
+│   ├── components/        # React components
+│   │   ├── About/        # Project history and information
+│   │   ├── Discoveries/  # Latest research findings
+│   │   ├── HeroSection/  # Main landing section
+│   │   ├── Layout/       # Header and footer
+│   │   ├── Newsletter/   # Email subscription
+│   │   ├── Research/     # Research tabs and content
+│   │   ├── Stats/        # Key findings and statistics
+│   │   └── UI/           # Reusable UI components
+│   ├── data/            # Static data and content
+│   ├── hooks/           # Custom React hooks
+│   ├── pages/           # Page components
+│   ├── styles/          # Global styles
+│   └── types/           # TypeScript definitions
+```
 
-In the project directory, you can run:
+## Features
+- **Interactive Research Showcase**: Dynamic presentation of research findings
+- **Community Integration**: Highlighting local participation and knowledge
+- **Historical Timeline**: Project evolution from 1972 to present
+- **Media Gallery**: Comprehensive collection of project photographs
+- **Resource Center**: Publications and educational materials
+- **Newsletter Integration**: Updates on latest discoveries
+- **Responsive Design**: Optimized for all devices
 
-### `npm start`
+## Technology Stack
+- React.js
+- Tailwind CSS
+- Lucide Icons
+- Modern JavaScript (ES6+)
+- Responsive Design Principles
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn package manager
+- Git
 
-### `npm test`
+### Installation
+1. Clone the repository
+```bash
+git clone https://github.com/your-username/conservation-website.git
+cd conservation-website
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-### `npm run build`
+3. Start the development server
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Build for production
+```bash
+npm run build
+# or
+yarn build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Component Documentation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### HeroSection
+The main landing section introducing the project's significance.
+```jsx
+<HeroSection 
+  setShowVideo={function}
+  setShowCitation={function}
+  activeInfoPoint={number}
+  setActiveInfoPoint={function}
+/>
+```
 
-### `npm run eject`
+### AboutProject
+Comprehensive overview of the project's history and achievements.
+```jsx
+<AboutProject />
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### ResearchTabs
+Interactive display of research areas and findings.
+```jsx
+<ResearchTabs 
+  dnaData={object}
+  selectedDnaSegment={string}
+  setSelectedDnaSegment={function}
+/>
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### LatestDiscoveries
+Showcase of recent research developments.
+```jsx
+<LatestDiscoveries 
+  researchHighlights={array}
+  activeStory={number}
+  setActiveStory={function}
+/>
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Data Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### research-data.js
+```javascript
+export const dnaData = {
+  // DNA analysis data structure
+};
 
-## Learn More
+export const researchHighlights = [
+  // Research highlights array
+];
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Styling
+- Utilizes Tailwind CSS for responsive design
+- Custom color scheme reflecting conservation themes
+- Consistent typography using serif for headings and sans-serif for body text
+- Responsive breakpoints for various screen sizes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Development Guidelines
 
-### Code Splitting
+### Code Style
+- Follow ESLint configuration
+- Use functional components with hooks
+- Implement proper TypeScript types
+- Follow component-based architecture
+- Maintain consistent naming conventions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Best Practices
+- Keep components focused and single-responsibility
+- Implement proper error handling
+- Use proper image optimization
+- Follow accessibility guidelines
+- Maintain responsive design principles
 
-### Analyzing the Bundle Size
+### Git Workflow
+1. Create feature branches
+2. Follow conventional commits
+3. Submit pull requests for review
+4. Maintain clean commit history
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Content Management
+- Images stored in categorized directories
+- Content managed through data files
+- Easily updatable research information
+- Modular component structure
 
-### Making a Progressive Web App
+## Performance Optimization
+- Lazy loading for images
+- Code splitting for routes
+- Optimized build process
+- Efficient state management
+- Proper caching strategies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Deployment
+1. Build the project
+```bash
+npm run build
+```
 
-### Advanced Configuration
+2. Test the build locally
+```bash
+npm run start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Deploy to your hosting platform of choice
 
-### Deployment
+## Contributing
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### `npm run build` fails to minify
+## Acknowledgments
+- Dr. Shirley C. Strum and the UNBP team
+- Local communities in Kenya
+- Research partners and supporters
+- Conservation organizations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# baboonsrus
+## Contact
+For questions and support, please contact:
+- Project Website: [website-url]
+- Email: [contact-email]
+- Twitter: [@handle]
+
+## Version History
+- 1.0.0: Initial release
+- 1.1.0: Added comprehensive research section
+- 1.2.0: Integrated community features
+
+---
+
+© 2024 The Uaso Ngiro Baboon Project Website. All rights reserved.
