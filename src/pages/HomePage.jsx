@@ -7,7 +7,7 @@ import ResearchTabs from '../components/Research/ResearchTabs';
 import LatestDiscoveries from '../components/Discoveries/LatestDiscoveries';
 import Newsletter from '../components/Newsletter/Newsletter';
 import Footer from '../components/Layout/Footer';
-import { Modal, VideoModalContent, CitationModalContent, ReadingProgress, ShareButtons, AutoSaveIndicator } from '../components/UI/Common';
+import { Modal, VideoModalContent, CitationModalContent, ReadingProgress, AutoSaveIndicator } from '../components/UI/Common';
 import { useScrollProgress } from '../hooks/useScrollProgress';
 
 // Add this data import
@@ -77,8 +77,6 @@ const HomePage = () => {
       </Modal>
 
       <ReadingProgress progress={readingProgress} />
-      
-      <ShareButtons />
       
       {readingProgress > 0 && <AutoSaveIndicator />}
     </div>
