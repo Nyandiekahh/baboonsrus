@@ -75,7 +75,7 @@ const Header = ({ setShowCitation }) => {
           isScrolled ? 'py-2' : 'py-4'
         }`}>
           <div className="flex gap-8 text-sm font-medium">
-            {['RESEARCH', 'CONSERVATION', 'DISCOVERIES', 'ARCHIVES'].map((item) => (
+            {['RESEARCH', 'CONSERVATION', 'DISCOVERIES'].map((item) => (
               <a 
                 key={item}
                 href="#"
