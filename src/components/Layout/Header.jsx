@@ -61,7 +61,7 @@ const Header = ({ setShowCitation }) => {
               isScrolled ? 'text-3xl' : 'text-5xl md:text-7xl'
             }`}
           >
-            The Primate Review
+            Baboons R Us
           </h1>
           <p className={`text-gray-600 uppercase tracking-widest transition-all duration-300 ${
             isScrolled ? 'text-xs mt-1' : 'text-sm mt-2'
