@@ -4,7 +4,7 @@ import { Scale, Book, Star, Globe } from 'lucide-react';
 
 const KeyFindings = () => {
   const stats = [
-    { number: "91%", desc: "DNA Similarity", icon: <Scale />, detail: "Shared genetic material with humans" },
+    { number: "91%", desc: "Similarity", icon: <Scale />, detail: "Shared genetic material with humans" },
     { number: "50+", desc: "Years Research", icon: <Book />, detail: "Cumulative field studies" },
     { number: "200+", desc: "Publications", icon: <Star />, detail: "Peer-reviewed articles" },
     { number: "1M+", desc: "Network", icon: <Globe />, detail: "Global research community" }

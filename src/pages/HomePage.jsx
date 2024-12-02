@@ -3,28 +3,23 @@ import Header from '../components/Layout/Header';
 import HeroSection from '../components/HeroSection/HeroSection';
 import AboutProject from '../components/About/AboutProject';
 import KeyFindings from '../components/Stats/KeyFindings';
-import ResearchTabs from '../components/Research/ResearchTabs';
+import { BossMessage } from '../components/BossMessage';
 import LatestDiscoveries from '../components/Discoveries/LatestDiscoveries';
 import Newsletter from '../components/Newsletter/Newsletter';
 import Footer from '../components/Layout/Footer';
 import { Modal, VideoModalContent, CitationModalContent, ReadingProgress, AutoSaveIndicator } from '../components/UI/Common';
 import { useScrollProgress } from '../hooks/useScrollProgress';
-
-// Add this data import
-import { dnaData, researchHighlights } from '../data/research-data';
+import { researchHighlights } from '../data/research-data';
 
 const HomePage = () => {
-  // State definitions
   const [showVideo, setShowVideo] = useState(false);
   const [activeStory, setActiveStory] = useState(0);
-  const [selectedDnaSegment, setSelectedDnaSegment] = useState(null);
   const [showCitation, setShowCitation] = useState(false);
   const [activeInfoPoint, setActiveInfoPoint] = useState(null);
   const readingProgress = useScrollProgress();
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Progress Bar */}
       <div 
         className="fixed top-0 left-0 h-1 bg-green-800 z-50 transition-all duration-300"
         style={{ width: `${readingProgress}%` }}
@@ -40,14 +35,10 @@ const HomePage = () => {
       />
 
       <AboutProject />
+      
+      <BossMessage />
 
       <KeyFindings />
-      
-      <ResearchTabs 
-        dnaData={dnaData}
-        selectedDnaSegment={selectedDnaSegment}
-        setSelectedDnaSegment={setSelectedDnaSegment}
-      />
       
       <LatestDiscoveries 
         researchHighlights={researchHighlights}
@@ -59,7 +50,6 @@ const HomePage = () => {
       
       <Footer />
 
-      {/* Modals */}
       <Modal 
         isOpen={showVideo} 
         onClose={() => setShowVideo(false)}

@@ -1,28 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import HomePage from './pages/HomePage';
 import Preloader from './components/Layout/Preloader';
-import styled from '@emotion/styled';
-
-const PageContainer = styled.div`
-  min-height: 100vh;
-  background-color: white;
-  opacity: ${props => props.isVisible ? 1 : 0};
-  transition: opacity 0.8s ease-in-out;
-  visibility: ${props => props.isVisible ? 'visible' : 'hidden'};
-`;
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [contentVisible, setContentVisible] = useState(false);
 
   useEffect(() => {
-    // Start with preloader
     const loadingTimer = setTimeout(() => {
       setIsLoading(false);
-      // After preloader fades out, fade in the content
-      setTimeout(() => {
-        setContentVisible(true);
-      }, 400); // This delay should be half of the preloader's fade-out duration
+      setTimeout(() => setContentVisible(true), 400);
     }, 2000);
 
     return () => clearTimeout(loadingTimer);
@@ -31,9 +18,10 @@ const App = () => {
   return (
     <>
       <Preloader isLoading={isLoading} />
-      <PageContainer isVisible={contentVisible}>
+      <div className={`min-h-screen bg-white transition-opacity duration-800 ease-in-out
+        ${contentVisible ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
         <HomePage />
-      </PageContainer>
+      </div>
     </>
   );
 };
