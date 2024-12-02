@@ -71,7 +71,7 @@ const Header = ({ setShowCitation }) => {
             <p className={`text-gray-600 uppercase tracking-widest transition-all duration-300 ${
               isScrolled ? 'text-xs mt-1' : 'text-sm mt-2'
             }`}>
-              Advancing Our Understanding of Evolution
+              Science to understand our origins...
             </p>
           </div>
 
