@@ -1,5 +1,4 @@
 import React from 'react';
-import { Quote } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -7,21 +6,25 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight">
-              Science to understand our origins...
-              <br />
-              Conservation to guarantee our future
-            </h1>
+            <div>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-4">
+                Science to understand our origins...
+                <br />
+                Conservation to guarantee our future
+              </h1>
+              <h2 className="text-2xl md:text-3xl text-green-800 font-serif">
+                Uaso Ngiro Baboon Project
+              </h2>
+            </div>
 
-            <blockquote className="relative p-6 bg-white rounded-lg shadow-lg">
-              <Quote className="absolute -top-3 -left-3 w-8 h-8 text-green-800" />
+            <div className="space-y-4">
               <p className="text-lg text-gray-600">
                 Baboons and humans are closely related and share many behaviors, emotions, and ways of seeing the world. Learning about baboons will let you decide for yourself the ways that baboons and humans are similar - and the ways that we are different.
               </p>
-              <footer className="mt-4 text-sm text-gray-500">
+              <p className="text-sm text-gray-500">
                 ~ Shirley Strum, Kenya, 2009
-              </footer>
-            </blockquote>
+              </p>
+            </div>
 
             <div className="flex flex-wrap gap-4">
               <button className="px-6 py-3 bg-green-800 text-white rounded-lg hover:bg-green-900 transition-colors">
