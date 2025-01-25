@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const HeroSection = () => {
   return (
     <section className="relative py-24 bg-gradient-to-b from-green-900/10 to-green-900/5">
